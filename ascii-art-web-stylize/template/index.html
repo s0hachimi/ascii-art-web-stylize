@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ascii-Art-Web</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div>
+        <h1 >Ascii Art</h1>
+    </div>
+    <form action="/ascii-art" method="post">
+        <div>
+                <h2>
+                <pre>  ======>  Input your Text : </pre>    
+                </h2>
+             <textarea autofocus required maxlength="200" name="ascii_art" cols="90" rows="7" ></textarea>
+        </div>
+        <br>
+        
+         <label for="bn"> Select Banner : </label>
+         <select name="banner" id="bn">
+            <option value="standard">standard</option>
+            <option value="shadow">shadow</option>
+            <option value="thinkertoy">thinkertoy</option>
+        </select>
+      
+        <div>
+            <br>
+            <input class="inp" type="submit" value="Get your Ascii Art"> 
+        </div>
+    </form>
+
+
+    
+</body>
+</html>
