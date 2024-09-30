@@ -6,6 +6,10 @@ import (
 	"os"
 )
 
+type result struct{
+	Output string
+}
+
 func Result(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
 		w.WriteHeader(http.StatusMethodNotAllowed)
@@ -37,6 +41,10 @@ func Result(w http.ResponseWriter, r *http.Request) {
 	}
 	output := AscciArt(input, string(file))
 
+	res := result{
+		Output: output,
+	}
+
 	tmp, err := template.ParseFiles("template/ascii-art.html")
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
@@ -44,10 +52,10 @@ func Result(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	err = tmp.Execute(w, output)
+	err = tmp.Execute(w, res)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
-		http.ServeFile(w, r, "static/500.html")
+		http.ServeFile(w, r, "error/500.html")
 		return
 	}
 }

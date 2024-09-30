@@ -18,7 +18,7 @@ pre {
     border-radius: 5px;
     display: inline-block;
     text-align: left; 
-    white-space: pre-wrap; 
+    white-space: pre;
 }
 
 .inp {
@@ -33,5 +33,20 @@ pre {
 }
 
 .inp:hover {
+    background-color: #4cb7e0;
+}
+
+.inpt{
+    background-color: #61dafb;
+    color: #282c34;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    margin-top: 50px;
+}
+
+.inpt:hover {
     background-color: #4cb7e0;
 }
